@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- CSS and meta data  -->
+    <%- include('./partials/head') %>
+        <title>Write a Blog</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <%- include('./partials/nav') %>
+        <main class="container my-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
+
+                    <li class="breadcrumb-item">
+                        <a class="link-body-emphasis fw-semibold text-decoration-none" href="#">Blog</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        Write a Blog
+                    </li>
+                </ol>
+            </nav>
+            <div class="row g-5">
+                <!-- firs col  -->
+                <div class="col-md-8">
+                    <% if (locals.error) { %>
+                        <div class="alert alert-danger" role="alert">
+                            <%= locals.error %>
+                        </div>
+                        <% } %>
+                            <form action="/blog/write-blog" enctype="multipart/form-data" method="post"
+                                class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                                <div class="mb-3">
+                                    <label for="coverImage" class="form-label">Blog Cover Image</label>
+                                    <input name="coverImage" class="form-control" type="file" id="coverImage">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">Blog Title</label>
+                                    <input name="title" type="text" class="form-control" id="title"
+                                        placeholder="Blog title">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="shortDesc" class="form-label">Short Description</label>
+                                    <textarea name="shortDesc" class="form-control" id="shortDesc" rows="3"
+                                        placeholder="Short Description of the Blog"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="blogBody" class="form-label">Blog Body</label>
+                                    <textarea name="body" class="form-control" id="blogBody" rows="10"
+                                        placeholder="Write your content here"></textarea>
+                                </div>
+
+                </div>
+                <!-- Second column  -->
+                <div class="col-md-4">
+                    <div class="border rounded-3 p-4 bg-body-tertiary">
+                        <% if (locals.slug) { %>
+                            <div class="mb-3">
+                                <label for="slug" class="form-label">Slug</label>
+                                <input value="<%= locals.slug %>" name="slug" type="text" class="form-control" id="slug"
+                                    placeholder="Slug">
+                            </div>
+
+                            <% } %>
+                                Ready to embark on a journey of wisdom and creativity?
+                                Amplify your voice, connect with like-minded minds, and contribute to a tapestry of
+                                insights.
+                                Your
+                                literary adventure
+                                begins here. Let the ink flow, and the insights unfold. Sign up now and start crafting
+                                your
+                                narrative in the realm of
+                                ideas.
+                                <div class="d-grid gap-2 my-5">
+                                    <button type="submit" class="btn btn-dark">Publish this Blog</button>
+                                </div>
+                                </form>
+                    </div>
+                </div>
+
+        </main>
+        <!-- Footer  -->
+        <%- include('./partials/footer') %>
+            <!-- Scripts -->
+            <%- include('./partials/scripts') %>
+</body>
+
+</html>

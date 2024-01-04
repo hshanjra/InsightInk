@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- CSS and meta data  -->
+    <%- include('./partials/head') %>
+        <title>Sign In to InsightInk</title>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+        <div class="container col-xl-10 col-xxl-8 px-4">
+            <div class="row align-items-center g-lg-5 py-5">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <img src="/public/logo-transparent.png" height="120" alt="Logo">
+                    <h1 class="display-5 fw-bold lh-1 text-body-emphasis mb-3" style="margin-top: -30px;">Welcome Back
+                        to
+                        <span class="fw-normal">Insight</span>Ink
+                    </h1>
+                    <p class="col-lg-10 fs-4">Dive back into the realm of words and wisdom. Let's continue crafting
+                        stories,
+                        sharing experiences, and building
+                        connections. Signin now and resume your exploration with <span
+                            class="fw-normal">Insight</span><b>Ink</b>.
+                    </p>
+                </div>
+                <div class="col-md-10 mx-auto col-lg-5">
+                    <form action="/user/signin" method="post" class=" p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                        <span class="display-7">Welcome Back</span>
+                        <h3 class="fw-bold lh-1 text-body-emphasis mb-3">Inker!</h3>
+                        <div class="form-floating mb-3">
+                            <input type="email" name="email" class="form-control" id="floatingInput"
+                                placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" name="password" class="form-control" id="floatingPassword"
+                                placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <% if (locals.error) { %>
+                            <div class="alert alert-danger" role="alert">
+                                <%= locals.error %>
+                            </div>
+                            <% } %>
+
+                                <button class="w-100 btn btn-lg btn-dark" type="submit">Sign in</button>
+                                <hr class="my-4">
+                                <small class="text-body-secondary">Signin now and resume your exploration with <span
+                                        class="fw-normal">Insight</span><b>Ink</b>.</small>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Footer  -->
+        <%- include('./partials/footer') %>
+            <!-- Scripts -->
+            <%- include('./partials/scripts') %>
+</body>
+
+</html>

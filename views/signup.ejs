@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- CSS and meta data  -->
+    <%- include('./partials/head') %>
+        <title>Sign Up to InsightInk</title>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+        <div class="container col-xl-10 col-xxl-8 px-4 ">
+            <div class="row align-items-center g-lg-5 py-5">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <img src="/public/logo-transparent.png" height="120" alt="Logo">
+                    <h1 class="display-6 fw-bold lh-1 text-body-emphasis mb-3" style="margin-top: -30px;">Unlock Your
+                        Insightful Journey with <span class="fw-normal">Insight</span>Ink</h1>
+                    <p class="col-lg-10 fs-4">Ready to embark on a journey of wisdom and creativity? Sign up for
+                        InsightInk
+                        and join a community where words hold the
+                        key to endless possibilities. </p>
+                </div>
+                <div class="col-md-10 mx-auto col-lg-5">
+
+                    <form action="/user/signup" method="post" class=" p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                        <h4 class="fw-bold lh-2 text-body-emphasis mb-3">Amplify your voice @<span
+                                class="fw-normal">Insight</span><b>Ink</b>!</h4>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="fullName" class="form-control" id="floatingName"
+                                placeholder="John Doe">
+                            <label for="floatingName">Full Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" name="email" class="form-control" id="floatingInput"
+                                placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" name="password" class="form-control" id="floatingPassword"
+                                placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+
+                        <button class="w-100 btn btn-lg btn-dark" type="submit">Sign up</button>
+                        <hr class="my-4">
+                        <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Footer  -->
+        <%- include('./partials/footer') %>
+            <!-- Scripts -->
+            <%- include('./partials/scripts') %>
+</body>
+
+</html>
